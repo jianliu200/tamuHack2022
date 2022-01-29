@@ -21,11 +21,12 @@ let phone = window.prompt("What is you phone number? ")
 
 let newrequest = new torequest(fullname,date, type, amount, time, email, phone)
 
-fs.writeFile('tourSchedule.json', newrequest, (err) => {
-    if (err) {
-        throw err;
-    }
-    console.log("JSON data is saved.");
+fs.writeFile("tourSchedule.json", JSON.stringify(newrequest), err => {
+     
+    // Checking for errors
+    if (err) throw err; 
+   
+    console.log("Done writing"); // Success
 });
 
 

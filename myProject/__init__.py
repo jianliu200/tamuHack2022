@@ -1,3 +1,1 @@
-falskdfjasldkfjaldflksdfkjsadffkj
-
-sadflkvoie4
+print("hello world")

@@ -42,7 +42,11 @@
         <span class="tour_headers">Campus Tour</span>
         <p class = "para">A guided walking tour of central campus that includes information about the history and traditions of Texas A&M with stops including Kyle Field, the Quad, and Academic Plaza. You may also add a Bonfire Memorial and/or Memorial Student Center tour to your campus tour for a full Aggie experience. (1 hour)</p>
         <div class="d-grid gap-2">
+<<<<<<< HEAD
             <button type="button" class="btn btn-outline-primary">Book</button>
+=======
+            <button  id = "myButton_campus" type="button" class="btn btn-outline-primary">Primary</button>
+>>>>>>> a0c85479a5cebeef66cbb93583df37b3b5673b63
         </div>
     </div>    
     <div id = "msc-Tour">
@@ -51,7 +55,11 @@
             Come walk through the living memorial and learn about the history and symbolism of the building while catching a glimpse of student life, including the "living room of Texas A&M" with The Flag Room, the university bookstore, art galleries and more. (30 minutes)
         </p>
         <div class="d-grid gap-2">
+<<<<<<< HEAD
             <button type="button" class="btn btn-outline-primary">Book</button>
+=======
+            <button id = "myButton_msc" type="button" class="btn btn-outline-primary" >Primary</button>
+>>>>>>> a0c85479a5cebeef66cbb93583df37b3b5673b63
         </div>
 
     </div>
@@ -59,8 +67,23 @@
         <span class = "tour_headers" >Bonfire tour</span>
         <p class = "para">The Bonfire Memorial embodies the history and tradition of Texas A&M and is dedicated to those involved in the tragic collapse of the 1999 Bonfire. Experience the history and tradition of Aggie Bonfire with a walkthrough of the memorial by a trained guide. (30 minutes)</p>
         <div class="d-grid gap-2">
+<<<<<<< HEAD
             <button type="button" class="btn btn-outline-primary">Book</button>
+=======
+            <button id = "myButton_bonfire" type="button" class="btn btn-outline-primary">Primary</button>
+>>>>>>> a0c85479a5cebeef66cbb93583df37b3b5673b63
         </div>
     </div>
 </body>
+<script>
+    document.getElementById("myButton_campus").onclick = function() {
+        location.href = "http://127.0.0.1:5500/times.html";
+    }
+    document.getElementById("myButton_msc").onclick = function() {
+        location.href = "http://127.0.0.1:5500/times.html";
+    }
+    document.getElementById("myButton_bonfire").onclick = function() {
+        location.href = "http://127.0.0.1:5500/times.html";
+    }
+</script>
 </html>

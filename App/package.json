@@ -2,7 +2,7 @@
   "name": "tamuhack2022",
   "version": "1.0.0",
   "description": "The best TamuHack project of all time!",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/josley88/tamuHack2022#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
   }
 }

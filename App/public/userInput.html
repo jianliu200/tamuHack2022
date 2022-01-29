@@ -26,8 +26,6 @@
     .button{
         padding-top: 30px;
     }
-    .form-floating{
-    }
     .image1{
             position: relative;
             height: 600px;
@@ -67,16 +65,20 @@
         
                 
                 <div class = "button">
-                    <button type="button" class="btn btn-outline-primary">Primary</button>
+                    <button id = "button_userinfo" type="button" class="btn btn-outline-primary">Primary</button>
                 </div>  
             </div>
           </div>
           <div class="col">
-            <img class = "image1" src = "/images/A&M.jpg">
+            <img class = "image1" src = "A&M.jpg">
         </div>
         </div>
       </div>
     
-    
 </body>
+<script>
+    document.getElementById("button_userinfo").onclick = function() {
+        location.href = "confirm.html";
+    }
+</script>
 </html>

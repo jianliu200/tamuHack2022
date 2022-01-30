@@ -1,24 +1,5 @@
 //const fs = require('fs');
 //const { type } = require('os');
-let temp_type = "";
-
-document.getElementById("myButton_campus").onclick = function() {
-    location.href = "times.html";
-    temp_type = "Campus";
-    console.log(temp_type)
-}
-document.getElementById("myButton_msc").onclick = function() {
-    location.href = "times.html";
-    temp_type = "MSC"
-}
-document.getElementById("myButton_bonfire").onclick = function() {
-    location.href = "times.html";
-    temp_type = "Bonfire";
-}
-
-
-
-
 class torequest{
     constructor(date, time, type, amount, name, email, phone){
         this.person = name

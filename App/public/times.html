@@ -155,20 +155,7 @@
         time_dropdown.textContent = time
       }
 
-      const submitRequest = (_month, _day, _time) => {
-        axios.post('/submitRequest', {
-          month: _month,
-          day: _day,
-          time: _time
-        })
-        .then((response) => {
-          console.log(response);
-        })
-        .catch( (error) => {
-          console.log(error)
-        });
-
-      }
+      
     </script>
     <br>
     <br>

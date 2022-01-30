@@ -14,4 +14,8 @@ let temp_type = " ";
         temp_type = "Bonfire";
         location.href = "times.html?type=" + temp_type;
     }
+
+    document.getElementById("myButton_viewSchedule").onclick = function() {
+        location.href = "";
+    }
 //_______________________________________________________________________________________

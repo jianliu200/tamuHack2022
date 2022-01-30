@@ -8,12 +8,12 @@ let urlSearchParams = new URLSearchParams(window.location.search);
 let type = urlSearchParams.get("type");
 let month = urlSearchParams.get("month");
 let day = urlSearchParams.get("day");
-
+let time = urlSearchParams.get("time")
 
 //setting user input
 //_______________________________________________________________________________________
 document.getElementById("button_userinfo").onclick = function() {
-    location.href = "/new?userName=" + userName + "&email=" + email + "&number=" + number + "&amount=" + amount + "&type=" + type + "&month=" + month + "&day=" + day;
+    location.href = "/new?userName=" + userName + "&email=" + email + "&number=" + number + "&amount=" + amount + "&type=" + type + "&month=" + month + "&day=" + day + "&time=" + time;
 }
 
 document.getElementById("floatingInputValue_1").oninput = function() {

@@ -1,86 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Information input</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Information input</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    </head>
 
-</head>
-
-<style>
-    .body{
-        font-size: medium;
-        display:flex;
-        padding-top: 50px;
-    }
-    .info{
-        font-size: x-large;
-        font-weight: bold;
-        padding-block: 10px;
-    }
-    .name{
-        box-sizing: border-box;
-    }
-    .button{
-        padding-top: 30px;
-    }
-    .image1{
-            position: relative;
-            height: 600px;
-            
+    <style>
+        .body{
+            font-size: medium;
+            display:flex;
+            padding-top: 50px;
         }
-</style>
-    
-<body class= "body">
-    <div class="container">
-        <div class="row">
-          <div class="col">
-            <div>
-                <p class = "info">Name:</p>
-                <form class="form-floating">
-                    <input type="email" class="form-control" id="floatingInputValue_1" placeholder="name@example.com" value="">
-                    <label for="floatingInputValue_1">Input with value</label>
-                </form>
+        .info{
+            font-size: x-large;
+            font-weight: bold;
+            padding-block: 10px;
+        }
+        .name{
+            box-sizing: border-box;
+        }
+        .button{
+            padding-top: 30px;
+        }
+        .image1{
+                position: relative;
+                height: 600px;  
+        }
+    </style>
         
-                <p class = "info">Email Address</p>
-                <form class="form-floating">
-                    <input type="email" class="form-control" id="floatingInputValue_2" placeholder="name@example.com" value="">
-                    <label for="floatingInputValue_2">Input with value</label>
-                  </form>
-        
-                <p class = "info">Phone Number:</p>
-                <form class="form-floating">
-                    <input type="email" class="form-control" id="floatingInputValue_3" placeholder="name@example.com" value="">
-                    <label for="floatingInputValue_3">Input with value</label>
-                  </form>
-        
-                <p class = "info">How many people in group?</p>
-                <form class="form-floating">
-                    <input type="email" class="form-control" id="floatingInputValue_4" placeholder="name@example.com" value="">
-                    <label for="floatingInputValue_4">Input with value</label>
-                  </form>
-        
-        
-                
-                <div class = "button">
-                    <button id = "button_userinfo" type="button" class="btn btn-outline-primary">Submit</button>
-                </div>  
-                <a href="days.html">
+
+    <body class= "body">
+        <div class="container">
+            <div class="row">
+            <div class="col">
+                <div>
+                    <p class = "info">Name:</p>
+                    <form class="form-floating">
+                        <input type="email" class="form-control" id="floatingInputValue_1" placeholder="name@example.com" value="">
+                        <label for="floatingInputValue_1">Input with value</label>
+                    </form>
+            
+                    <p class = "info">Email Address</p>
+                    <form class="form-floating">
+                        <input type="email" class="form-control" id="floatingInputValue_2" placeholder="name@example.com" value="">
+                        <label for="floatingInputValue_2">Input with value</label>
+                    </form>
+            
+                    <p class = "info">Phone Number:</p>
+                    <form class="form-floating">
+                        <input type="email" class="form-control" id="floatingInputValue_3" placeholder="name@example.com" value="">
+                        <label for="floatingInputValue_3">Input with value</label>
+                    </form>
+            
+                    <p class = "info">How many people in group?</p>
+                    <form class="form-floating">
+                        <input type="email" class="form-control" id="floatingInputValue_4" placeholder="name@example.com" value="">
+                        <label for="floatingInputValue_4">Input with value</label>
+                    </form>
+            
+            
+                    
                     <div class = "button">
-                        <button id = "button_userinfo" type="button" class="btn btn-outline-primary">Previous</button>
-                    </div> 
-                </a>
+                        <button id = "button_userinfo" type="button" class="btn btn-outline-primary">Submit</button>
+                    </div>  
+                    <a href="days.html">
+                        <div class = "button">
+                            <button id = "button_userinfo" type="button" class="btn btn-outline-primary">Previous</button>
+                        </div> 
+                    </a>
+                </div>
             </div>
-          </div>
-          <div class="col">
-            <img class = "image1" src = "A&M.jpg">
+            <div class="col">
+                <img class = "image1" src = "A&M.jpg">
+            </div>
+            </div>
         </div>
-        </div>
-      </div>
+    </body>
     
-</body>
-<script src = "userInput.js">
-</script>
+    <script src = "userInput.js"></script>
 </html>

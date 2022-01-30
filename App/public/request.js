@@ -1,7 +1,6 @@
-console.log("imported")
-
+const { Template } = require('ejs');
 const fs = require('fs');
-//const { type } = require('os');
+const { type } = require('os');
 
 class torequest{
     constructor(date, time, type, amount, name, email, phone){

@@ -1,29 +1,33 @@
-let name = "";
+let userName = "";
 let email = "";
 let number = "";
 let amount = "";
+
+let urlSearchParams = new URLSearchParams(window.location.search);
+
+let type = urlSearchParams.get("type");
+let month = urlSearchParams.get("month");
+let day = urlSearchParams.get("day");
 
 
 //setting user input
 //_______________________________________________________________________________________
 document.getElementById("button_userinfo").onclick = function() {
-    location.href = "confirm.html";
+    location.href = "/new?userName=" + userName + "&email=" + email + "&number=" + number + "&amount=" + amount + "&type=" + type + "&month=" + month + "&day=" + day;
 }
 
 document.getElementById("floatingInputValue_1").oninput = function() {
-    this.name = document.getElementById("floatingInputValue_1").value;
+    userName = document.getElementById("floatingInputValue_1").value;
 }
 
 document.getElementById("floatingInputValue_2").oninput = function() {
-    this.email = document.getElementById("floatingInputValue_2").value;
+    email = document.getElementById("floatingInputValue_2").value;
 }
 
 document.getElementById("floatingInputValue_3").oninput = function() {
-    this.number = document.getElementById("floatingInputValue_3").value;
-
+    number = document.getElementById("floatingInputValue_3").value;
 }
 document.getElementById("floatingInputValue_4").oninput = function() {
-    this.amount = document.getElementById("floatingInputValue_4").value;
-    console.log(this.amount);
+    amount = document.getElementById("floatingInputValue_4").value;
 }
 //_______________________________________________________________________________________

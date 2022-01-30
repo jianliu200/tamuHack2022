@@ -14,16 +14,15 @@ var users = [];
 
 
 fs.readFile("tourSchedule.json", (err, data) => {
-  if (err) return;
-
-  if (data.length > 0) {
-    users = JSON.parse(data)
-  } else {
-    users = []
-  }
+  if (err)
+    return;
+    if (data.length > 0) {
+        users.push(JSON.parse(data))
+    } else {
+        users = []
+    }
     
-    console.log(users)
-    console.log("INIT")
+    //console.log(users)
 
   //console.log(JSON.parse(data))
 });
@@ -69,8 +68,6 @@ app.get('/', (req, res) => {
     
     })
 })
-
-
 
 // landing page will be /views/index.js
 app.get('/timeslot', (req, res) => {

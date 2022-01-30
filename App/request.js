@@ -16,7 +16,7 @@ class torequest{
 
 }
 
-let newrequest = new torequest("10,12,2022", "10:22:05", "MSC", 20, "Sam", "san@gmail.com", "999-999-9999")
+let newrequest = new torequest("10/12/2022", "10:22:05", "MSC", 20, "Sam", "san@gmail.com", "999-999-9999")
 
 
 fs.writeFile("tourSchedule.json", JSON.stringify(newrequest), err => {

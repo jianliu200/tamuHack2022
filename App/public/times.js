@@ -17,8 +17,12 @@ document.getElementById("dayDropdown").onclick = function() {
 document.getElementById("timeDropdown").onclick = function() {
     my_time = document.getElementById("dropdownMenuButtonTime").textContent;
 }
+
 document.getElementById("button_userinfo_next").onclick = function() {
-    location.href = "/userInput.html?type=" + type + "&month=" + my_month + "&day=" + my_day + "&time=" + my_time;
+    if ((my_month != "" && my_day != "") && my_time != "") {
+        location.href = "/userInput.html?type=" + type + "&month=" + my_month + "&day=" + my_day + "&time=" + my_time;
+    }
+    
 }
 
 

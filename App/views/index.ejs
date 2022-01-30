@@ -61,8 +61,21 @@
                 <button id = "myButton_bonfire" type="button" class="btn btn-outline-primary">Primary</button>
             </div>
         </div>
+
+        <div>
+            <ul>
+                <% for(var i=0; i<users.length; i++) { %>
+                    <li>
+                        <%= users[0][i] %>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+
+
     </body>
 
+
     <script src = "type.js"/></script>
-    
+
 </html>

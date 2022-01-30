@@ -13,7 +13,9 @@ let time = urlSearchParams.get("time")
 //setting user input
 //_______________________________________________________________________________________
 document.getElementById("button_userinfo").onclick = function() {
-    location.href = "/new?userName=" + userName + "&email=" + email + "&number=" + number + "&amount=" + amount + "&type=" + type + "&month=" + month + "&day=" + day + "&time=" + time;
+    if (userName != "" && email != "" && number != "" && number != "" && amount != "") {
+        location.href = "/new?userName=" + userName + "&email=" + email + "&number=" + number + "&amount=" + amount + "&type=" + type + "&month=" + month + "&day=" + day + "&time=" + time;
+    }
 }
 
 document.getElementById("button_back").onclick = function() {

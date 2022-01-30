@@ -15,7 +15,7 @@ let temp_type = " ";
         location.href = "times.html?type=" + temp_type;
     }
 
-    document.getElementById("myButton_viewSchedule").onclick = function() {
-        location.href = "";
+    document.getElementById("myButton_ViewSchedule").onclick = function() {
+        location.href = "tourSchedule.html";
     }
 //_______________________________________________________________________________________

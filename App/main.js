@@ -26,7 +26,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 // setup favicon.ico
-app.use(favicon("favicon.ico"))
+app.use(favicon('./public/favicon.ico'));
 
 app.get("/new", (req, res) => {
   const type = req.query.type;

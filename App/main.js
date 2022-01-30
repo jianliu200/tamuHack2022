@@ -2,6 +2,10 @@
 const fs = require('fs');
 
 const express = require('express')
+const axios = require('axios')
+const bodyParser = require('body-parser')
+let _request = require('./public/request.js');
+
 const app = express()
 const port = 8080;
 

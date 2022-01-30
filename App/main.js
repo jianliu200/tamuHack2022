@@ -4,7 +4,7 @@ const fs = require('fs');
 const express = require('express')
 const axios = require('axios')
 const bodyParser = require('body-parser')
-let _request = require('./public/request.js');
+
 
 const app = express()
 const port = 8080;
@@ -14,8 +14,7 @@ let users = [];
 fs.readFile("tourSchedule.json", (err, data) => {
   if (err)
     return;
-  users.push(JSON.parse(data));
-  console.log(users)
+  console.log(JSON.parse(data));
 })
 
 // tell express to use the ejs files in '/views'
@@ -39,10 +38,7 @@ app.get("/new", (req, res) => {
   )
 
   fs.writeFile("tourSchedule.json", JSON.stringify(users), err => {
-      
-      // Checking for errors
-      if (err) throw err; 
-
+      if (err) return; 
       console.log("Done writing"); // Success
   });
 

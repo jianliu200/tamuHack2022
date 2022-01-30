@@ -21,10 +21,17 @@
     "ejs": "^3.1.6",
     "express": "^4.17.2",
     "fs": "^0.0.1-security",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "serve-favicon": "^2.5.0"
   },
   "engines": {
     "node": "^16.13.0"
   },
-  "nodemonConfig": { "ext": "js", "ignore": ["*.json"], "delay": "2" }
+  "nodemonConfig": {
+    "ext": "js",
+    "ignore": [
+      "*.json"
+    ],
+    "delay": "2"
+  }
 }

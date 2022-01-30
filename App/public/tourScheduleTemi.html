@@ -27,56 +27,21 @@
     <title>Times</title>
     <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script>
 </head>
+
 <script>
-    const fs = require('fs')
-    fs.readFile('tourSchedule.json', 'utf8', (err, jsonString) => {
-        if (err) {
-            console.log("File read failed:", err)
-            return
+    function appendData(data) {
+        var mainContainer = document.getElementById("myData");
+        for (var i = 0; i < data.length; i++) {
+            var div = document.createElement("div");
+            div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
+            mainContainer.appendChild(div);
         }
-        console.log('File data:', jsonString) 
-        const total = JSON.parse(jsonString)
-        console.log(total.date)
-    })
-</script>
-<script>
-    const fs = require('fs')
-    fs.readFile('tourSchedule.json', 'utf8', (err, jsonString) => {
-        if (err) {
-            console.log("Failed", err)
-        }
-        console.log(jsonString)
-    })
-</script>
-
-
-<script type="text/javascript" src="tourSchedule.json"> </script>
-
-<script>
-
-    $(function() {
-
-
-   var people = [];
-
-   $.getJSON('tourSchedule.json', function(data) {
-       $.each(data.person, function(i, f) {
-          var tblRow = "<tr>" + "<td>" + f.firstName + "</td>" +
-           "<td>" + f.lastName + "</td>" + "<td>" + f.job + "</td>" + "<td>" + f.roll + "</td>" + "</tr>"
-           $(tblRow).appendTo("#userdata tbody");
-     });
-
-   });
-
-});
+    }
 </script>
 
 <body>
-    <img class="image1" src="A&M.jpg">
-    <h1>Schedule the Month to Visit</h1>
-    <div class="dropdown">
 
-    </div>
+    <div id="myData"></div>
     <br>
     <br>
     <br>

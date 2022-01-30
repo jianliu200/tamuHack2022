@@ -25,25 +25,27 @@
           Month
         </button>
         <ul id="daysDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" onclick="setMonth('January')">January</a></li>
-          <li><a class="dropdown-item" href="days.html">Febuary</a></li>
-          <li><a class="dropdown-item" href="days.html">March</a></li>
-          <li><a class="dropdown-item" href="days.html">April</a></li>
-          <li><a class="dropdown-item" href="days.html">May</a></li>
-          <li><a class="dropdown-item" href="days.html">June</a></li>
-          <li><a class="dropdown-item" href="days.html">July</a></li>
-          <li><a class="dropdown-item" href="days.html">August</a></li>
-          <li><a class="dropdown-item" href="days.html">September</a></li>
-          <li><a class="dropdown-item" href="days.html">October</a></li>
-          <li><a class="dropdown-item" href="days.html">November</a></li>
-          <li><a class="dropdown-item" href="days.html">December</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('January')">January</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('Febuary')">Febuary</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('March')">March</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('April')">April</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('May')">May</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('June')">June</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('July')">July</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('August')">August</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('September')">September</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('October')">October</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('November')">November</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('December')">December</a></li>
         </ul>
         </div>
     <script>
 
-      let month = "Not Set";
+      let month = "Month";
+      let day = "Day";
       let days_dropdown = document.getElementById("dropdownMenuButton1");
       days_dropdown.textContent = month;
+      days_dropdown
 
       let setMonth = (_month) => {
         month = _month;

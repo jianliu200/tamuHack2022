@@ -1,12 +1,10 @@
 //backend make request class upload to json file
 const fs = require('fs');
-const { Template } = require('ejs');
-//const { type } = require('os');
-const { type } = require('os');
+
 const express = require('express')
 const axios = require('axios')
 const bodyParser = require('body-parser')
-let _request = require('./public/request.js');
+
 
 const app = express()
 const port = 8080;
@@ -45,10 +43,7 @@ app.get("/new", (req, res) => {
   )
 
   fs.writeFile("tourSchedule.json", JSON.stringify(users), err => {
-      
-      // Checking for errors
-      if (err) throw err; 
-
+      if (err) return; 
       console.log("Done writing"); // Success
   });
 

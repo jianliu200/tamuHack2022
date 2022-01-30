@@ -24,12 +24,15 @@
   <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
   <body>
     <img class = "image1" src = "A&M.jpg">
-    <h1>Schedule the Month to Visit</h1>
-    <div class="dropdown">
-        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+
+    <!-- Month Dropdown -->
+    <h1>Schedule the date to Visit</h1>
+    <div style="display: flex; margin-left:auto; margin-right: auto; width: 50%;">
+      <div class="dropdown">
+        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButtonMonth" data-bs-toggle="dropdown" aria-expanded="false" style="flex: 1; margin-right: 20px;">
           Month
         </button>
-        <ul id="daysDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <ul id="monthDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButtonMonth">
           <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('January')">January</a></li>
           <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('Febuary')">Febuary</a></li>
           <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('March')">March</a></li>
@@ -43,30 +46,93 @@
           <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('November')">November</a></li>
           <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('December')">December</a></li>
         </ul>
-        </div>
+      </div>
+
+
+        <!-- Day dropdown -->
+      <div class="dropdown">
+        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButtonDay" data-bs-toggle="dropdown" aria-expanded="false" style="flex: 1;">
+            Day
+        </button>
+        <ul id="dayDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButtonDay">
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('1')">1</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('2')">2</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('3')">3</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('4')">4</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('5')">5</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('6')">6</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('7')">7</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('8')">8</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('9')">9</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('10')">10</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('11')">11</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('12')">12</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('13')">13</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('14')">14</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('15')">15</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('16')">16</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('17')">17</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('18')">18</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('19')">19</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('20')">20</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('21')">21</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('22')">22</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('23')">23</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('24')">24</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('25')">25</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('26')">26</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('27')">27</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('28')">28</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('29')">29</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('30')">30</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    
+  
+
+
+    <!-- script to pull in month and day from our dropdown and assign to month and day variables-->
     <script>
 
-      let month = "Month";
-      let day = "Day";
-      let days_dropdown = document.getElementById("dropdownMenuButton1");
-      days_dropdown.textContent = month;
-      days_dropdown
+      let month = "Month"
+      let day = "Day"
 
+      // grab our dropdown for month and set to current month text
+      let month_dropdown = document.getElementById("dropdownMenuButtonMonth")
+      month_dropdown.textContent = month
+
+      // grab our dropdown for day and set to current day text
+      let day_dropdown = document.getElementById("dropdownMenuButtonDay")
+
+      // set month variable from click, then update text
       let setMonth = (_month) => {
-        month = _month;
-        days_dropdown.textContent = month;
+        month = _month
+        month_dropdown.textContent = month
+      }
+
+      // set day variable from click, then update text
+      let setDay = (_day) => {
+        day = _day
+        day_dropdown.textContent = day
       }
 
 
     </script>
     <br>
     <br>
-    <br>
-    <a href="/">
-      <div class = "button">
-          <button id = "button_userinfo" type="button" class="btn btn-outline-primary">Previous</button>
-      </div> 
-    </a>
+    <div>
+      <a href="/">
+        <div class = "button">
+            <button id = "button_userinfo" type="button" class="btn btn-outline-primary">Previous</button>
+        </div> 
+      </a>
+    </div>
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script type="text/javascript">(function(){window['__CF$cv$params']={r:'6d55b4f108eb5db5',m:'5dUyrI6qshRGAC_mcBVuv3yV61DTi1CFzdDIPJJSTPw-1643493348-0-AcdISMAeBlQZiJIM2hmaFKVjfMDoAJm0Jilfj+y8DIZDcjzqp6pLHIL1/rlsH1yskkjFKirTZOKjfOawaAVu/0w96dVNqga+LDP4QZJDGDqBF/PKCWFqLoW8B4N8uoMvQ5pkBD6fhdJnpoYO++xC5tHH9P0Mf0wcZtvkwphMdKH/LA9IugV2MLx3sYz2AfYp5g==',s:[0xa2bb9534f6,0xfb1dc883e8],}})();</script></body>
 </html>

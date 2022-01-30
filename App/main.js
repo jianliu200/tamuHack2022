@@ -17,7 +17,7 @@ fs.readFile("tourSchedule.json", (err, data) => {
   if (err)
     return;
     if (data.length > 0) {
-        users.push(JSON.parse(data))
+        users = JSON.parse(data)
     } else {
         users = []
     }

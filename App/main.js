@@ -25,7 +25,7 @@ fs.readFile("tourSchedule.json", (err, data) => {
     //console.log(users)
 
   //console.log(JSON.parse(data))
-})
+});
 
 // tell express to use the ejs files in '/views'
 app.set('view engine', 'ejs');
@@ -51,7 +51,12 @@ app.get("/new", (req, res) => {
 
   //console.log(users)
 
-  return res.redirect('/confirm.html');
+  fs.writeFile("tourSchedule.json", JSON.stringify(users), err => {
+      if (err) return; 
+      console.log("Done writing"); // Success
+
+  return res.redirect('/confirm.html')
+  })
 })
 
 //console.log(users)
@@ -75,5 +80,7 @@ app.get('/timeslot', (req, res) => {
 
 // open server at port defined
 app.listen(port, () => {
-  console.log(`App listening on port ${port}`)
+  console.log(`App listening on port ${port}`);
 })
+
+

@@ -141,10 +141,6 @@ app.get("/new", (req, res) => {
           });
         }
         else{
-          fs.appendFile("tourSchedule.json", JSON.stringify(users), err => {
-            if (err) return; 
-            console.log("Done writing"); // Success
-          });
         }
         
       }

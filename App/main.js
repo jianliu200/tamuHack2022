@@ -15,6 +15,7 @@ fs.readFile("tourSchedule.json", (err, data) => {
   if (err)
     return;
   users = JSON.parse(data);
+  console.log(users)
 })
 
 // tell express to use the ejs files in '/views'
@@ -33,8 +34,9 @@ app.get("/new", (req, res) => {
   const amount = req.query.amount;
 
   console.log(users);
-
-  users.push({ type, month, day, userName, email, number, amount});
+  users.push(
+    {type, month, day, userName, email, number, amount}
+  )
 
   fs.writeFile("tourSchedule.json", JSON.stringify(users), err => {
       

@@ -36,7 +36,7 @@
     <input id = "email_box" class="form-control"  placeholder="name@example.com">
     
     <p class = "info">Password</p>
-    <input id = "password_box" class="form-control" placeholder="password">
+    <input id = "password_box" class="form-control" placeholder="********">
     
 
     <div class="col-auto">
@@ -52,7 +52,7 @@
         email = document.getElementById("email_box").value;
         password = document.getElementById("password_box").value;
         if(email == "hackyhackers@tamu.edu" && password == "tamuHack22"){
-            location.href = "tourSchedule.html";
+            location.href = "timeslot";
         }
         else{
             console.log("invalid username or password!")

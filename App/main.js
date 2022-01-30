@@ -10,13 +10,21 @@ const { json } = require('body-parser');
 const app = express()
 const port = 8080;
 
-let users = [];
+var users = [];
+
 
 fs.readFile("tourSchedule.json", (err, data) => {
   if (err)
     return;
- 
-  console.log(JSON.parse(data))
+    if (data.length > 0) {
+        users.push(JSON.parse(data))
+    } else {
+        users = []
+    }
+    
+    //console.log(users)
+
+  //console.log(JSON.parse(data))
 })
 
 // tell express to use the ejs files in '/views'
@@ -38,10 +46,10 @@ app.get("/new", (req, res) => {
   const number = req.query.number;
   const amount = req.query.amount;
 
-  console.log(users);
-  users.push(
-    {type, month, day, time, userName, email, number, amount}
-  )
+  let new_User = {type, month, day, time, userName, email, number, amount}
+  users.push(new_User)
+
+  //console.log(users)
 
   fs.writeFile("tourSchedule.json", JSON.stringify(users), err => {
       if (err) return; 
@@ -51,12 +59,24 @@ app.get("/new", (req, res) => {
   return res.redirect('/confirm.html');
 })
 
+//console.log(users)
+
 // landing page will be /views/index.js
 app.get('/', (req, res) => {
   res.render('index', {
-    users: users.sort()
+    users: JSON.stringify(users)
+    
     })
 })
+
+// landing page will be /views/index.js
+app.get('/timeslot', (req, res) => {
+   console.log(JSON.stringify(users))
+
+    res.render('timeslot', {
+      users: JSON.stringify(users)
+    })
+  })
 
 // open server at port defined
 app.listen(port, () => {

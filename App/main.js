@@ -1,4 +1,5 @@
 //backend make request class upload to json file
+const fs = require('fs');
 
 const express = require('express')
 const axios = require('axios')
@@ -6,7 +7,15 @@ const bodyParser = require('body-parser')
 let _request = require('./public/request.js');
 
 const app = express()
-const port = 8080
+const port = 8080;
+
+let users = [];
+
+fs.readFile("tourSchedule.json", (err, data) => {
+  if (err)
+    return;
+  users = JSON.parse(data);
+})
 
 // tell express to use the ejs files in '/views'
 app.set('view engine', 'ejs');
@@ -14,31 +23,34 @@ app.set('view engine', 'ejs');
 // Where to store frontend assets
 app.use(express.static('public'));
 
-// Allow for req.body to be utilized in '/upvote-joke'
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.get("/new", (req, res) => {
+  const type = req.query.type;
+  const month = req.query.month;
+  const day = req.query.day;
+  const userName = req.query.userName;
+  const email = req.query.email;
+  const number = req.query.number;
+  const amount = req.query.amount;
 
+  console.log(users);
 
+  users.push({ type, month, day, userName, email, number, amount});
 
-app.post('/submitRequest', (req, res) => {
-    let month = req.body.month
-    let day = req.body.day
-    let time = req.body.time
+  fs.writeFile("tourSchedule.json", JSON.stringify(users), err => {
+      
+      // Checking for errors
+      if (err) throw err; 
 
-    let new_request = _request.createRequest(month + day, time, "MSC", 20, "Sam", "san@gmail.com", "999-999-9999")
+      console.log("Done writing"); // Success
+  });
 
-    _request.writeToJSON("filename.json", new_request)
-    console.log(new_request)
-
+  return res.redirect('/confirm.html');
 })
-
-
-
-
 
 // landing page will be /views/index.js
 app.get('/', (req, res) => {
-  res.render('index')
+  console.log("hello")
+  res.render('index', {users: users})
 })
 
 // open server at port defined

@@ -74,7 +74,7 @@ app.get('/timeslot', (req, res) => {
    console.log(JSON.stringify(users))
 
     res.render('timeslot', {
-      users: JSON.stringify(users)
+      _users: JSON.stringify(users)
     })
   })
 

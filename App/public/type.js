@@ -16,6 +16,6 @@ let temp_type = " ";
     }
 
     document.getElementById("myButton_ViewSchedule").onclick = function() {
-        location.href = "tourSchedule.html";
+        location.href = "signIn.html";
     }
 //_______________________________________________________________________________________

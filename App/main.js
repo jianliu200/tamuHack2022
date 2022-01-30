@@ -3,7 +3,8 @@ const fs = require('fs');
 
 const express = require('express')
 const axios = require('axios')
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const { json } = require('body-parser');
 
 
 const app = express()
@@ -14,12 +15,8 @@ let users = [];
 fs.readFile("tourSchedule.json", (err, data) => {
   if (err)
     return;
-
-  if(data.length > 0) {
-    users.push(JSON.parse(data));
-  }
-  
-  console.log(users)
+ 
+  console.log(JSON.parse(data))
 })
 
 // tell express to use the ejs files in '/views'
@@ -32,6 +29,7 @@ app.get("/new", (req, res) => {
   const type = req.query.type;
   const month = req.query.month;
   const day = req.query.day;
+  const time = req.query.time;
   const userName = req.query.userName;
   const email = req.query.email;
   const number = req.query.number;
@@ -39,7 +37,7 @@ app.get("/new", (req, res) => {
 
   console.log(users);
   users.push(
-    {type, month, day, userName, email, number, amount}
+    {type, month, day, time, userName, email, number, amount}
   )
 
   fs.writeFile("tourSchedule.json", JSON.stringify(users), err => {

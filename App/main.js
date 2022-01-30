@@ -1,6 +1,8 @@
 //backend make request class upload to json file
 const fs = require('fs');
-
+const { Template } = require('ejs');
+//const { type } = require('os');
+const { type } = require('os');
 const express = require('express')
 const axios = require('axios')
 const bodyParser = require('body-parser')

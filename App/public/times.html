@@ -13,6 +13,10 @@
   body {
     text-align: center;
     padding-block: 15%;
+    background-image: url('homeBG.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
   }
 
   .dropdown {
@@ -26,7 +30,7 @@
 </style>
 
 <div
-  style="background: ghostwhite; border: 10px solid lightgray; height:250px; width: 500px; position: relative; margin-left:auto; margin-right: auto;border-radius: 25px; top:-50px">
+  style="background: rgb(255, 255, 255); border: 10px solid lightgray; height:376px; width: 500px; position: relative; margin-left:auto; margin-right: auto;border-radius: 25px; top:-50px">
 
   <title>Times</title>
   </head>
@@ -36,7 +40,7 @@
     <br></br>
 
     <h1>Schedule the date to Visit</h1>
-    <div style="display: flex; margin-left:auto; margin-right: auto; width: 23%;position:relative; left: -100px">
+    <div style="display: flex; margin-left:auto; margin-right: auto; width: 23%;position:relative; left: -110px;">
 
       <!-- Month Dropdown -->
       <div class="dropdown">
@@ -138,83 +142,87 @@
 
     </div>
 
+
+
+
+    <!-- add in axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- script to pull in month and day from our dropdown and assign to month and day variables-->
+    <script>
+
+      let month = "Month"
+      let day = "Day"
+      let time = "Time"
+
+      // grab our dropdown for month and set to current month text
+      let month_dropdown = document.getElementById("dropdownMenuButtonMonth")
+      month_dropdown.textContent = month
+
+      // grab our dropdown for day and set to current day text
+      let day_dropdown = document.getElementById("dropdownMenuButtonDay")
+      day_dropdown.textContent = day
+
+      // grab our dropdown for time and set to current time text
+      let time_dropdown = document.getElementById("dropdownMenuButtonTime")
+      time_dropdown.textContent = time
+
+      // set month variable from click, then update text
+      let setMonth = (_month) => {
+        month = _month
+        month_dropdown.textContent = month
+      }
+
+      // set day variable from click, then update text
+      let setDay = (_day) => {
+        day = _day
+        day_dropdown.textContent = day
+      }
+
+      // set time variable from click, then update text
+      let setTime = (_time) => {
+        time = _time
+        time_dropdown.textContent = time
+      }
+
+      const submitRequest = (_month, _day, _time) => {
+        axios.post('/submitRequest', {
+          month: _month,
+          day: _day,
+          time: _time
+        })
+          .then((response) => {
+            console.log(response);
+          })
+          .catch((error) => {
+            console.log(error)
+          });
+
+      }
+    </script>
+    <br>
+    <br>
+    <div>
+      <div class="button">
+        <a href='/'>
+          <button id="button_userinfo" type="button" class="btn btn-outline-primary"
+            style="width: 90px; height: 40px">Previous</button>
+        </a>
+        <button id="button_userinfo_next" type="button" class="btn btn-outline-primary"
+          style="width: 70px; height: 40px">Next</button>
+      </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
+    <script
+      type="text/javascript">(function () { window['__CF$cv$params'] = { r: '6d55b4f108eb5db5', m: '5dUyrI6qshRGAC_mcBVuv3yV61DTi1CFzdDIPJJSTPw-1643493348-0-AcdISMAeBlQZiJIM2hmaFKVjfMDoAJm0Jilfj+y8DIZDcjzqp6pLHIL1/rlsH1yskkjFKirTZOKjfOawaAVu/0w96dVNqga+LDP4QZJDGDqBF/PKCWFqLoW8B4N8uoMvQ5pkBD6fhdJnpoYO++xC5tHH9P0Mf0wcZtvkwphMdKH/LA9IugV2MLx3sYz2AfYp5g==', s: [0xa2bb9534f6, 0xfb1dc883e8], } })();</script>
+  </body>
+  <script src="times.js"></script>
+
+
 </div>
-
-
-<!-- add in axios -->
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-<!-- script to pull in month and day from our dropdown and assign to month and day variables-->
-<script>
-
-  let month = "Month"
-  let day = "Day"
-  let time = "Time"
-
-  // grab our dropdown for month and set to current month text
-  let month_dropdown = document.getElementById("dropdownMenuButtonMonth")
-  month_dropdown.textContent = month
-
-  // grab our dropdown for day and set to current day text
-  let day_dropdown = document.getElementById("dropdownMenuButtonDay")
-  day_dropdown.textContent = day
-
-  // grab our dropdown for time and set to current time text
-  let time_dropdown = document.getElementById("dropdownMenuButtonTime")
-  time_dropdown.textContent = time
-
-  // set month variable from click, then update text
-  let setMonth = (_month) => {
-    month = _month
-    month_dropdown.textContent = month
-  }
-
-  // set day variable from click, then update text
-  let setDay = (_day) => {
-    day = _day
-    day_dropdown.textContent = day
-  }
-
-  // set time variable from click, then update text
-  let setTime = (_time) => {
-    time = _time
-    time_dropdown.textContent = time
-  }
-
-  const submitRequest = (_month, _day, _time) => {
-    axios.post('/submitRequest', {
-      month: _month,
-      day: _day,
-      time: _time
-    })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error)
-      });
-
-  }
-</script>
-<br>
-<br>
-<div>
-  <div class="button">
-    <a href='/'>
-      <button id="button_userinfo" type="button" class="btn btn-outline-primary"
-        style="width: 90px; height: 40px">Previous</button>
-    </a>
-    <button id="button_userinfo_next" type="button" class="btn btn-outline-primary"
-      style="width: 70px; height: 40px">Next</button>
-  </div>
-</div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script
-  type="text/javascript">(function () { window['__CF$cv$params'] = { r: '6d55b4f108eb5db5', m: '5dUyrI6qshRGAC_mcBVuv3yV61DTi1CFzdDIPJJSTPw-1643493348-0-AcdISMAeBlQZiJIM2hmaFKVjfMDoAJm0Jilfj+y8DIZDcjzqp6pLHIL1/rlsH1yskkjFKirTZOKjfOawaAVu/0w96dVNqga+LDP4QZJDGDqBF/PKCWFqLoW8B4N8uoMvQ5pkBD6fhdJnpoYO++xC5tHH9P0Mf0wcZtvkwphMdKH/LA9IugV2MLx3sYz2AfYp5g==', s: [0xa2bb9534f6, 0xfb1dc883e8], } })();</script>
-</body>
-<script src="times.js"></script>
 
 </html>

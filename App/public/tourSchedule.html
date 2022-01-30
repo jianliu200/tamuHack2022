@@ -74,9 +74,74 @@
 <body>
     <img class="image1" src="A&M.jpg">
     <h1>Schedule the Month to Visit</h1>
+    <!-- Month Dropdown -->
     <div class="dropdown">
+        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButtonMonth"
+          data-bs-toggle="dropdown" aria-expanded="false" style="flex: 1; margin-right: 0px;">
+          Month
+        </button>
+        <ul id="monthDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButtonMonth">
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;"
+              onclick="setMonth('January')">January</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;"
+              onclick="setMonth('Febuary')">Febuary</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('March')">March</a>
+          </li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('April')">April</a>
+          </li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('May')">May</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('June')">June</a>
+          </li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('July')">July</a>
+          </li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('August')">August</a>
+          </li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;"
+              onclick="setMonth('September')">September</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;"
+              onclick="setMonth('October')">October</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;"
+              onclick="setMonth('November')">November</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;"
+              onclick="setMonth('December')">December</a></li>
+        </ul>
+      </div>
+  
+  
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-    </div>
+  <!-- script to pull in month and day from our dropdown and assign to month and day variables-->
+  <script>
+
+    let month = "Month"
+
+    // grab our dropdown for month and set to current month text
+    let month_dropdown = document.getElementById("dropdownMenuButtonMonth")
+    month_dropdown.textContent = month
+
+    // set month variable from click, then update text
+    let setMonth = (_month) => {
+      month = _month
+      month_dropdown.textContent = month
+    }
+
+
+
+    const submitRequest = (_month, _day, _time) => {
+      axios.post('/submitRequest', {
+        month: _month,
+      })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error)
+        });
+
+    }
+  </script>
+
+  
     <br>
     <br>
     <br>

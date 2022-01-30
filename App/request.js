@@ -1,6 +1,6 @@
 console.log("imported")
 
-//const fs = require('fs');
+const fs = require('fs');
 //const { type } = require('os');
 
 class torequest{
@@ -17,8 +17,7 @@ class torequest{
 }
 
 let newrequest = new torequest("10/12/2022", "10:22:05", "MSC", 20, "Sam", "san@gmail.com", "999-999-9999")
-
-
+let newr = new torequest("10/20/2022", "10:22", "MSC", 5, "Tom", "Tom@gamil.com", "99-991-9999")
 fs.writeFile("tourSchedule.json", JSON.stringify(newrequest), err => {
      
     // Checking for errors
@@ -27,5 +26,12 @@ fs.writeFile("tourSchedule.json", JSON.stringify(newrequest), err => {
     console.log("Done writing"); // Success
 });
 
+fs.writeFile("tourSchedule.json", JSON.stringify(newr), err => {
+     
+    // Checking for errors
+    if (err) throw err; 
+
+    console.log("Done writing"); // Success
+});
 
 

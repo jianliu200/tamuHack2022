@@ -31,6 +31,18 @@
     const fs = require('fs')
     fs.readFile('tourSchedule.json', 'utf8', (err, jsonString) => {
         if (err) {
+            console.log("File read failed:", err)
+            return
+        }
+        console.log('File data:', jsonString) 
+        const total = JSON.parse(jsonString)
+        console.log(total.date)
+    })
+</script>
+<script>
+    const fs = require('fs')
+    fs.readFile('tourSchedule.json', 'utf8', (err, jsonString) => {
+        if (err) {
             console.log("Failed", err)
         }
         console.log(jsonString)

@@ -1,6 +1,6 @@
 //backend make request class upload to json file
 const fs = require('fs');
-
+var favicon = require('serve-favicon');
 const express = require('express')
 const axios = require('axios')
 const bodyParser = require('body-parser');
@@ -24,6 +24,9 @@ app.set('view engine', 'ejs');
 
 // Where to store frontend assets
 app.use(express.static('public'));
+
+// setup favicon.ico
+app.use(favicon("favicon.ico"))
 
 app.get("/new", (req, res) => {
   const type = req.query.type;

@@ -1,212 +1,219 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="zoom:120%"">
 
 <head>
   <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset=" utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <style>
-    body {
-      text-align: center;
-      padding-block: 15%;
-    }
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<style>
+  body {
+    text-align: center;
+    padding-block: 15%;
+  }
 
-    .dropdown {
-      text-align: center;
-    }
+  .dropdown {
+    text-align: center;
+  }
 
-    .image1 {
-      position: relative;
-      height: 100px;
-    }
-  </style>
+  .image1 {
+    position: relative;
+    height: 100px;
+  }
+</style>
 
-  <div
-    style="background: ghostwhite; border: 10px solid lightgray; width: 500px; position: relative; margin-left:auto; margin-right: auto">
+<div
+  style="background: ghostwhite; border: 10px solid lightgray; height:250px; width: 500px; position: relative; margin-left:auto; margin-right: auto;border-radius: 25px; top:-50px">
 
-    <title>Times</title>
-</head>
+  <title>Times</title>
+  </head>
 
-<body>
-  <img class="image1" src="A&M.jpg">
+  <body>
+    <img class="image1" src="A&M.jpg" style="width:100px;height:100px">
+    <br></br>
+
+    <h1>Schedule the date to Visit</h1>
+    <div style="display: flex; margin-left:auto; margin-right: auto; width: 23%;position:relative; left: -100px">
+
+      <!-- Month Dropdown -->
+      <div class="dropdown">
+        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButtonMonth"
+          data-bs-toggle="dropdown" aria-expanded="false" style="flex: 1; margin-right: 20px;">
+          Month
+        </button>
+        <ul id="monthDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButtonMonth">
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;"
+              onclick="setMonth('January')">January</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;"
+              onclick="setMonth('Febuary')">Febuary</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('March')">March</a>
+          </li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('April')">April</a>
+          </li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('May')">May</a>
+          </li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('June')">June</a>
+          </li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('July')">July</a>
+          </li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;"
+              onclick="setMonth('August')">August</a>
+          </li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;"
+              onclick="setMonth('September')">September</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;"
+              onclick="setMonth('October')">October</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;"
+              onclick="setMonth('November')">November</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;"
+              onclick="setMonth('December')">December</a></li>
+        </ul>
+      </div>
 
 
-  <h1>Schedule the date to Visit</h1>
-  <div style="display: flex; margin-left:auto; margin-right: auto; width: 23%;position:relative; left: -100px">
+      <!-- Day dropdown -->
+      <div class="dropdown">
+        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButtonDay"
+          data-bs-toggle="dropdown" aria-expanded="false" style="flex: 1; margin-right: 20px;">
+          Day
+        </button>
+        <ul id="dayDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButtonDay">
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('1')">1</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('2')">2</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('3')">3</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('4')">4</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('5')">5</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('6')">6</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('7')">7</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('8')">8</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('9')">9</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('10')">10</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('11')">11</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('12')">12</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('13')">13</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('14')">14</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('15')">15</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('16')">16</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('17')">17</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('18')">18</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('19')">19</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('20')">20</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('21')">21</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('22')">22</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('23')">23</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('24')">24</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('25')">25</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('26')">26</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('27')">27</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('28')">28</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('29')">29</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('30')">30</a></li>
+        </ul>
+      </div>
 
-    <!-- Month Dropdown -->
-    <div class="dropdown">
-      <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButtonMonth"
-        data-bs-toggle="dropdown" aria-expanded="false" style="flex: 1; margin-right: 20px;">
-        Month
-      </button>
-      <ul id="monthDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButtonMonth">
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;"
-            onclick="setMonth('January')">January</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;"
-            onclick="setMonth('Febuary')">Febuary</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('March')">March</a>
-        </li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('April')">April</a>
-        </li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('May')">May</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('June')">June</a>
-        </li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('July')">July</a>
-        </li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setMonth('August')">August</a>
-        </li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;"
-            onclick="setMonth('September')">September</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;"
-            onclick="setMonth('October')">October</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;"
-            onclick="setMonth('November')">November</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;"
-            onclick="setMonth('December')">December</a></li>
-      </ul>
+      <!-- Time dropdown -->
+      <div class="dropdown">
+        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButtonTime"
+          data-bs-toggle="dropdown" aria-expanded="false" style="flex: 1;">
+          Time
+        </button>
+        <ul id="timeDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButtonTime">
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setTime('1:00')">1:00</a>
+          </li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setTime('2:00')">2:00</a>
+          </li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setTime('3:00')">3:00</a>
+          </li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setTime('4:00')">4:00</a>
+          </li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setTime('5:00')">5:00</a>
+          </li>
+          <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setTime('6:00')">6:00</a>
+          </li>
+        </ul>
+      </div>
+
     </div>
 
-
-    <!-- Day dropdown -->
-    <div class="dropdown">
-      <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButtonDay"
-        data-bs-toggle="dropdown" aria-expanded="false" style="flex: 1; margin-right: 20px;">
-        Day
-      </button>
-      <ul id="dayDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButtonDay">
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('1')">1</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('2')">2</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('3')">3</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('4')">4</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('5')">5</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('6')">6</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('7')">7</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('8')">8</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('9')">9</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('10')">10</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('11')">11</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('12')">12</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('13')">13</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('14')">14</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('15')">15</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('16')">16</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('17')">17</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('18')">18</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('19')">19</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('20')">20</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('21')">21</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('22')">22</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('23')">23</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('24')">24</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('25')">25</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('26')">26</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('27')">27</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('28')">28</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('29')">29</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setDay('30')">30</a></li>
-      </ul>
-    </div>
+</div>
 
 
-    <!-- Time dropdown -->
-    <div class="dropdown">
-      <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButtonTime"
-        data-bs-toggle="dropdown" aria-expanded="false" style="flex: 1;">
-        Time
-      </button>
-      <ul id="timeDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButtonTime">
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setTime('1:00')">1:00</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setTime('2:00')">2:00</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setTime('3:00')">3:00</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setTime('4:00')">4:00</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setTime('5:00')">5:00</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer; user-select: none;" onclick="setTime('6:00')">6:00</a></li>
-      </ul>
-    </div>
+<!-- add in axios -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+<!-- script to pull in month and day from our dropdown and assign to month and day variables-->
+<script>
 
-  </div>
+  let month = "Month"
+  let day = "Day"
+  let time = "Time"
 
-  </div>
+  // grab our dropdown for month and set to current month text
+  let month_dropdown = document.getElementById("dropdownMenuButtonMonth")
+  month_dropdown.textContent = month
 
+  // grab our dropdown for day and set to current day text
+  let day_dropdown = document.getElementById("dropdownMenuButtonDay")
+  day_dropdown.textContent = day
 
-  <!-- add in axios -->
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  // grab our dropdown for time and set to current time text
+  let time_dropdown = document.getElementById("dropdownMenuButtonTime")
+  time_dropdown.textContent = time
 
-  <!-- script to pull in month and day from our dropdown and assign to month and day variables-->
-  <script>
-
-    let month = "Month"
-    let day = "Day"
-    let time = "Time"
-
-    // grab our dropdown for month and set to current month text
-    let month_dropdown = document.getElementById("dropdownMenuButtonMonth")
+  // set month variable from click, then update text
+  let setMonth = (_month) => {
+    month = _month
     month_dropdown.textContent = month
+  }
 
-    // grab our dropdown for day and set to current day text
-    let day_dropdown = document.getElementById("dropdownMenuButtonDay")
+  // set day variable from click, then update text
+  let setDay = (_day) => {
+    day = _day
     day_dropdown.textContent = day
+  }
 
-    // grab our dropdown for time and set to current time text
-    let time_dropdown = document.getElementById("dropdownMenuButtonTime")
+  // set time variable from click, then update text
+  let setTime = (_time) => {
+    time = _time
     time_dropdown.textContent = time
+  }
 
-    // set month variable from click, then update text
-    let setMonth = (_month) => {
-      month = _month
-      month_dropdown.textContent = month
-    }
-
-    // set day variable from click, then update text
-    let setDay = (_day) => {
-      day = _day
-      day_dropdown.textContent = day
-    }
-
-    // set time variable from click, then update text
-    let setTime = (_time) => {
-      time = _time
-      time_dropdown.textContent = time
-    }
-
-    const submitRequest = (_month, _day, _time) => {
-      axios.post('/submitRequest', {
-        month: _month,
-        day: _day,
-        time: _time
+  const submitRequest = (_month, _day, _time) => {
+    axios.post('/submitRequest', {
+      month: _month,
+      day: _day,
+      time: _time
+    })
+      .then((response) => {
+        console.log(response);
       })
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error)
-        });
+      .catch((error) => {
+        console.log(error)
+      });
 
-    }
-  </script>
-  <br>
-  <br>
-  <div>
-    <div class="button">
-      <a href='/'>
-        <button id="button_userinfo" type="button" class="btn btn-outline-primary">Previous</button>
-      </a>
-      <button id="button_userinfo_next" type="button" class="btn btn-outline-primary">Next</button>
-    </div>
+  }
+</script>
+<br>
+<br>
+<div>
+  <div class="button">
+    <a href='/'>
+      <button id="button_userinfo" type="button" class="btn btn-outline-primary"
+        style="width: 90px; height: 40px">Previous</button>
+    </a>
+    <button id="button_userinfo_next" type="button" class="btn btn-outline-primary"
+      style="width: 70px; height: 40px">Next</button>
   </div>
+</div>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
-  <script
-    type="text/javascript">(function () { window['__CF$cv$params'] = { r: '6d55b4f108eb5db5', m: '5dUyrI6qshRGAC_mcBVuv3yV61DTi1CFzdDIPJJSTPw-1643493348-0-AcdISMAeBlQZiJIM2hmaFKVjfMDoAJm0Jilfj+y8DIZDcjzqp6pLHIL1/rlsH1yskkjFKirTZOKjfOawaAVu/0w96dVNqga+LDP4QZJDGDqBF/PKCWFqLoW8B4N8uoMvQ5pkBD6fhdJnpoYO++xC5tHH9P0Mf0wcZtvkwphMdKH/LA9IugV2MLx3sYz2AfYp5g==', s: [0xa2bb9534f6, 0xfb1dc883e8], } })();</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script
+  type="text/javascript">(function () { window['__CF$cv$params'] = { r: '6d55b4f108eb5db5', m: '5dUyrI6qshRGAC_mcBVuv3yV61DTi1CFzdDIPJJSTPw-1643493348-0-AcdISMAeBlQZiJIM2hmaFKVjfMDoAJm0Jilfj+y8DIZDcjzqp6pLHIL1/rlsH1yskkjFKirTZOKjfOawaAVu/0w96dVNqga+LDP4QZJDGDqBF/PKCWFqLoW8B4N8uoMvQ5pkBD6fhdJnpoYO++xC5tHH9P0Mf0wcZtvkwphMdKH/LA9IugV2MLx3sYz2AfYp5g==', s: [0xa2bb9534f6, 0xfb1dc883e8], } })();</script>
 </body>
 <script src="times.js"></script>
 

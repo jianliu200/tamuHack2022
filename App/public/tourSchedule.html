@@ -28,6 +28,27 @@
     <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script>
 </head>
 
+<script type="text/javascript" src="tourSchedule.json"> </script>
+
+<script>
+
+    $(function() {
+
+
+   var people = [];
+
+   $.getJSON('tourSchedule.json', function(data) {
+       $.each(data.person, function(i, f) {
+          var tblRow = "<tr>" + "<td>" + f.firstName + "</td>" +
+           "<td>" + f.lastName + "</td>" + "<td>" + f.job + "</td>" + "<td>" + f.roll + "</td>" + "</tr>"
+           $(tblRow).appendTo("#userdata tbody");
+     });
+
+   });
+
+});
+</script>
+
 <body>
     <img class="image1" src="A&M.jpg">
     <h1>Schedule the Month to Visit</h1>

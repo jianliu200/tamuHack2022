@@ -66,5 +66,29 @@ fs.readFile("tourSchedule.json", 'utf8', function (err, data) {
   }
 
   console.log(list);
-
+  for(let i = 0; i < list.length; i++){
+    let temp = {
+      type: list[i][0],
+      month: list[i][1],
+      day: list[i][2],
+      time: list[i][3],
+      userName: list[i][4],
+      email:list[i][5],
+      number:list[i][6],
+      amount:list[i][7]
+    }
+    if(i ==0){
+      fs.writeFile("tourSchedule.json", JSON.stringify(users), err => {
+        if (err) return; 
+        console.log("Done writing"); // Success
+      });
+    }
+    else{
+      fs.appendFile("tourSchedule.json", JSON.stringify(users), err => {
+        if (err) return; 
+        console.log("Done writing"); // Success
+      });
+    }
+    
+  }
 });

@@ -4,7 +4,7 @@ const fs = require('fs');
 const express = require('express')
 const axios = require('axios')
 const bodyParser = require('body-parser')
-let _request = require('./public/request.js');
+
 
 const app = express()
 const port = 8080;
@@ -14,7 +14,11 @@ let users = [];
 fs.readFile("tourSchedule.json", (err, data) => {
   if (err)
     return;
-  users.push(JSON.parse(data));
+
+  if(data.length > 0) {
+    users.push(JSON.parse(data));
+  }
+  
   console.log(users)
 })
 
@@ -39,10 +43,7 @@ app.get("/new", (req, res) => {
   )
 
   fs.writeFile("tourSchedule.json", JSON.stringify(users), err => {
-      
-      // Checking for errors
-      if (err) throw err; 
-
+      if (err) return; 
       console.log("Done writing"); // Success
   });
 
@@ -51,8 +52,9 @@ app.get("/new", (req, res) => {
 
 // landing page will be /views/index.js
 app.get('/', (req, res) => {
-  console.log("hello")
-  res.render('index', {users: users})
+  res.render('index', {
+    users: users.sort()
+    })
 })
 
 // open server at port defined
